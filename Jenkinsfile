@@ -12,7 +12,7 @@ pipeline {
                 }
             }
         }
-        stage ('Deploy to Staging'){
+        stage ('Deploy to Application Server'){
             steps {
                 build job: 'Deploy-to-application'
             }
