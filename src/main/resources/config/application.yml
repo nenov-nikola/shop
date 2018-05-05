@@ -7,3 +7,4 @@ spring:
   jpa:
     properties:
         org.hibernate.dialect.MySQLDialect: update
+  server.contextPath: /shop-0.0.1-SNAPSHOT
