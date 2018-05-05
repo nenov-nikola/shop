@@ -14,18 +14,8 @@ pipeline {
         }
         stage ('Deploy to Staging'){
             steps {
-                build job: 'Deploy-to-application'
-            }
-            post {
-                success {
-                    echo 'Code deployed !!!'
-                }
-
-                failure {
-                    echo ' Deployment failed !!!'
-                }
+                build job: 'deploy-to-application'
             }
         }
     }
 }
-
