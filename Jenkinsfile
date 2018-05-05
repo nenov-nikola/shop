@@ -19,7 +19,7 @@ pipeline {
         }
         stage ('Deploy to Staging'){
             steps {
-                sh "scp -i /home/ubuntu/.ssh/key.pem **/target/*.war ubuntu@${params.tomcat_dev}:/opt/tomcat/webapps"
+                sh "scp -i /home/jenkins/key.pem **/target/*.war ubuntu@${params.tomcat_dev}:/opt/tomcat/webapps"
             }
             post {
                 success {
