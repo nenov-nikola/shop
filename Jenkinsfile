@@ -16,8 +16,16 @@ pipeline {
             steps {
                 build job: 'deploy-to-application'
             }
+            post {
+                success {
+                    echo 'Code deployed !!'
+                }
+
+                failure {
+                    echo ' Deployment failed !!!!'
+                }
+            }
         }
-       
     }
 }
 
