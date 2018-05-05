@@ -1,10 +1,5 @@
 pipeline {
     agent any
-    
-    parameters {
-         string(name: 'tomcat_dev', defaultValue: '18.222.67.251', description: 'Dev Server')
-    }
-    
     stages{
         stage('Build'){
             steps {
@@ -19,7 +14,7 @@ pipeline {
         }
         stage ('Deploy to Staging'){
             steps {
-                sh "scp **/target/*.war ubuntu@${params.tomcat_dev}:/opt/tomcat/webapps"
+                build job: 'Deploy-to-application'
             }
             post {
                 success {
