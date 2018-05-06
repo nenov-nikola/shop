@@ -6,5 +6,4 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     properties:
-        org.hibernate.dialect.MySQLDialect: create
-  server.contextPath: /shop-0.0.1-SNAPSHOT
+        org.hibernate.dialect.MySQLDialect: update
