@@ -1,2 +1,2 @@
 # shop
-Java, Spring Boot ++ JPA API for web shop
+Java, Spring Boot - JPA API for web shop
