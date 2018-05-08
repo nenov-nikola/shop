@@ -3,10 +3,10 @@ pipeline {
     stages{
         stage('Build'){
             steps {
+                sh 'mvn clean install'
                 script {
                     currentBuild.displayName = "ROOT."
                 }
-                sh 'mvn clean install'
             }
             post {
                 success {
