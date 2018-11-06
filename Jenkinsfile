@@ -26,7 +26,7 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp  -i /var/lib/jenkins/key.pem **/target/*.war ec2-user@${params.qa_env}:/home/ec2-user"
+                        sh "scp **/target/*.war ec2-user@${params.qa_env}:/home/ec2-user"
                         sh "ssh ec2-user@${params.qa_env}"
                         sh "cd /home/ec2-user"
                         sh "ls -al"
