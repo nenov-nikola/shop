@@ -27,10 +27,7 @@ pipeline {
                 stage ('Deploy to Staging'){
                     steps {
                         sh "scp /var/lib/jenkins/workspace/Build-QA-Environment/target/shop-0.0.1-SNAPSHOT.war ec2-user@${params.qa_env}:/home/ec2-user"
-                        sh "ssh -i /home/ec2-user/.ssh/id_rsa ec2-user@54.89.152.232"
-                        sh "cd /home/ec2-user"
-                        sh "chmod 777 shop-0.0.1-SNAPSHOT.war"
-                        sh "java -jar shop-0.0.1-SNAPSHOT.war"
+                        sh "ssh -i /home/ec2-user/.ssh/id_rsa ec2-user@54.89.152.232 'date'"
                     }
                 }
             }
