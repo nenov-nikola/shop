@@ -12,12 +12,5 @@ pipeline {
                 }
             }
         }
-        
-         stage ('Deploy to Application Server'){
-            steps {
-                build job: 'deploy-to-application'
-            }
-        }
-       
     }
 }
