@@ -26,7 +26,7 @@ pipeline {
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp **/target/*.war ec2-user@${params.qa_env}:/home/ec2-user"
+                        sh "scp  -i ~/.ssh/id_rsa.pub **/target/*.war ec2-user@${params.qa_env}:/home/ec2-user"
                         sh "ssh ec2-user@${params.qa_env}"
                         sh "cd /home/ec2-user"
                         sh "ls -al"
